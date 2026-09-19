@@ -1,10 +1,12 @@
+import { useValues } from '../store'
 const Statistics = () => {
-  const good = 0
-  const neutral = 0
-  const bad = 0
-  const all = 0
-  const average = 0
-  const positive = 0
+  const { good, neutral, bad } = useValues()
+  // const good = 0
+  // const neutral = 0
+  // const bad = 0
+  const all = good + neutral + bad
+  const average = all > 0 ? (good - bad) / all : 0
+  const positive = all > 0 ? (good / all * 100) + " %" : "0 %"
   
   return (
     <div>
