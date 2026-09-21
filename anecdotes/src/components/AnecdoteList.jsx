@@ -1,10 +1,10 @@
-import { useAnecdotes, useAnecdoteActions, useNotificationActions } from "../store"
+import { useAnecdotes, useAnecdoteActions } from "../anecdoteStore"
+import { useNotificationActions } from "../notificationStore"
 
 const AnecdoteList = () => {
   const anecdotes = useAnecdotes()
   const { vote, remove } = useAnecdoteActions()
   const { setNotification } = useNotificationActions()
-  const sortedAnecdotes = anecdotes.toSorted((a, b) => b.votes - a.votes)
 
   const handleVote = (id, content) => {
     vote(id)
@@ -18,7 +18,7 @@ const AnecdoteList = () => {
 
   return (
     <div>
-      {sortedAnecdotes.map((anecdote) => (
+      {anecdotes.map((anecdote) => (
         <div key={anecdote.id}>
           <div>{anecdote.content}</div>
           <div>

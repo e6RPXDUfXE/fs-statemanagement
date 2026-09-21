@@ -3,7 +3,7 @@ import AnecdoteForm from "./components/AnecdoteForm"
 import AnecdoteList from './components/AnecdoteList'
 import Filter from './components/Filter'
 import Notification from './components/Notification'
-import { useAnecdoteActions } from './store'
+import { useAnecdoteActions } from './anecdoteStore'
 
 const App = () => {
   const { initialize } = useAnecdoteActions()

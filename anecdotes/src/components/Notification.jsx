@@ -1,4 +1,4 @@
-import { useNotification } from '../store'
+import { useNotification } from '../notificationStore'
 const Notification = () => {
   const style = {
     border: "solid",
